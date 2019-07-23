@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  console.log(props)
+  // console.log(props)
  
   useEffect(() => {
     const id = Number(props.match.params.id) ? Number(props.match.params.id) : 0;
@@ -19,7 +19,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[props.match.params.id]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
