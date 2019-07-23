@@ -55,6 +55,7 @@ body {
 }
 .save-button {
   position: absolute;
+  cursor: pointer;
   top: 25px;
   right: 25px;
   border: 1px solid grey;
