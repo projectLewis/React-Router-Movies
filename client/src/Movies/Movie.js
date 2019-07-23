@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 
 const Movie = props => {
   const [movie, setMovie] = useState();
-  const { saveMovie } = props;
+  const { saveMovie, removeMovie } = props;
 
   useEffect(() => {
     const id = Number(props.match.params.id)
@@ -43,6 +43,14 @@ const Movie = props => {
         }}
       >
         Save
+      </div>
+      <div
+        className="remove-button"
+        onClick={() => {
+          removeMovie(movie.title);
+        }}
+      >
+        Remove
       </div>
     </div>
   );

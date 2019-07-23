@@ -14,6 +14,18 @@ const App = () => {
     }
   };
 
+  const removeFromSavedList = movie => {
+    const adjustedList = [];
+    savedList.forEach(oldMovie => {
+      if (movie === oldMovie) {
+        return;
+      } else {
+        adjustedList.push(movie);
+      }
+    });
+    setSavedList(adjustedList);
+  };
+
   return (
     <Router>
       <div>
@@ -23,7 +35,13 @@ const App = () => {
           <Route path="/" exact render={props => <MovieList {...props} />} />
           <Route
             path="/movies/:id?"
-            render={props => <Movie saveMovie={addToSavedList} {...props} />}
+            render={props => (
+              <Movie
+                removeMovie={removeFromSavedList}
+                saveMovie={addToSavedList}
+                {...props}
+              />
+            )}
           />
         </Switch>
       </div>
