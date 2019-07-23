@@ -4,7 +4,8 @@ import MovieCard from './MovieCard';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  // console.log(props)
+  const {saveMovie} = props;
+  console.log(saveMovie)
  
   useEffect(() => {
     const id = Number(props.match.params.id) ? Number(props.match.params.id) : 0;
@@ -35,7 +36,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <MovieCard key={movie.id} movie={movie} />
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={() => {saveMovie(movie.title)}}>Save</div>
     </div>
   );
 }
