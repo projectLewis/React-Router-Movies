@@ -20,7 +20,7 @@ const App = () => {
       if (movie === oldMovie) {
         return;
       } else {
-        adjustedList.push(movie);
+        adjustedList.push(oldMovie);
       }
     });
     setSavedList(adjustedList);
@@ -29,7 +29,6 @@ const App = () => {
   return (
     <Router>
       <div>
-        {console.log(savedList)}
         <SavedList list={savedList} />
         <Switch>
           <Route path="/" exact render={props => <MovieList {...props} />} />
