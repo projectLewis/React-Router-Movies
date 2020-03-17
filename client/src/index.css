@@ -55,6 +55,7 @@ body {
 }
 .save-button {
   position: absolute;
+  cursor: pointer;
   top: 25px;
   right: 25px;
   border: 1px solid grey;
@@ -63,6 +64,19 @@ body {
 }
 .save-button:hover {
   background-color: green;
+  color: white;
+}
+.remove-button {
+  position: absolute;
+  cursor: pointer;
+  top: 65px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightcoral;
+}
+.remove-button:hover {
+  background-color: rgb(243, 50, 50);
   color: white;
 }
 
